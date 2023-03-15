@@ -21,6 +21,7 @@ if __name__ == '__main__':
         print("{} {} {} = {}".format(a, operator, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
 
     """for i in range (len(argv) - 1):
         if argv[2] == '+':
