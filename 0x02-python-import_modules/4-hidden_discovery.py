@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-import sys
-import hidden_4
-if __name == '__main__':
-    for n in dir(hidden_4):
-        if n[:2] != "__":
-            print(n)
+if __name__ == "__main__":
+    import hidden_4
+    for word in dir(hidden_4):
+        if not(word[0] == '_' and word[1] == '_'):
+            print("{}".format(word))
