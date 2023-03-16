@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * insert_node - function for insert node at a position
  * @head: poniter to the first node
@@ -7,44 +9,44 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new, *tmp;
-	int i, j;
+	listint_t *node;
+	listint_t *new_node;
 
-	new = malloc(sizeof(listint_t));
-	if (!new)
-		return (NULL);
-	new->n = number, tmp = *head;
-	if (!(*head))
-		return (*head = new, new->next = NULL, new);
-	for (i = 0; tmp; i++)
+	new_node = malloc(sizeof(listint_t));
+	if (!head || !(*head))
 	{
-		if (number > tmp->n)
-		{
-			if (!tmp->next)
-				return (tmp->next = new, new->next = NULL, new);
-			tmp = tmp->next;
-			continue;
-		}
-		else
-		{
-			new->next = tmp;
-			if (tmp == *head)
-			{
-				*head = new;
-				break;
-			}
-			tmp = *head;
-			for (j = 0; j < i; j++)
-			{
-				if (j == (i - 1))
-				{
-					tmp->next = new;
-					break;
-				}
-				tmp = tmp->next;
-			}
-			break;
-		}
+		new_node->n = number;
+		new_node->next = NULL;
+		*head = new_node;
+		return (new_node);
 	}
-	return (new);
+	node = *head;
+	if (!new_node)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	if (number <= node->n)
+	{
+		new_node->n = number;
+		new_node->next = node;
+		node = new_node->next;
+		*head = new_node;
+		return (new_node);
+	}
+	while (node)
+	{
+		if (!node->next)
+			return (add_nodeint_end(head, number));
+		if ((number > node->n) && (number <= (node->next)->n))
+		{
+			new_node->n = number;
+			new_node->next = node->next;
+			node->next = new_node;
+			return (new_node);
+		}
+		node = node->next;
+	}
+	free(new_node);
+	return (NULL);
 }
