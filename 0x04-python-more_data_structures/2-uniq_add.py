@@ -8,4 +8,4 @@ def unq_add(my_list=[]):
         else:
             new_list.append(my_list[i])
             x += my_list[i]
-    print(x)            
+    print(x)
