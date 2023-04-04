@@ -59,14 +59,3 @@ class Rectangle:
             return 0
         else:
             return ((2 * self.__height) + (2 * self.__width))
-    def __str__(self):
-        """string representation"""
-        if not (self.__width or self.__height):
-            return ("")
-        hash_print = []
-        for i in range(self.__height):
-            for j in range(self.__width):
-                hash_print.append("#")
-            if (i < self.__height - 1):
-                    hash_print.append("\n")
-        return "".join(hash_print)
