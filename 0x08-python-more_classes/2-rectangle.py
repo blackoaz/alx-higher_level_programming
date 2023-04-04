@@ -61,7 +61,8 @@ class Rectangle:
             return ((2 * self.__height) + (2 * self.__width))
 
     def __str__(self):
-        """string representation"""
+        """string representation for the perimeter and area"""
+
         if not (self.__width or self.__height):
             return ("")
         hash_print = []
