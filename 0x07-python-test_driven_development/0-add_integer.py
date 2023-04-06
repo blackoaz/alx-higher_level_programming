@@ -3,7 +3,10 @@
 
 
 def add_integer(a, b=98):
-    """function for summing up two numbers, the function checks if the values are either integer or float, otherwise raises an error"""
+    """function for summing up two numbers,
+    the function checks if the values are either integer or float,
+    otherwise raises an error
+    """
 
     if ((not isinstance(a, int) and not isinstance(a, float))):
         raise TypeError("a must be an integer")
