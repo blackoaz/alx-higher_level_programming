@@ -1,0 +1,45 @@
+=============================
+How to use 3-say_my_name.py
+===========================
+importing the module
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+basic use case:
+>>> say_my_name("Paulo", "Akello")
+My name is Paulo Akello
+
+using the default last name:
+
+>>> say_my_name("Paulo")
+My name is Paulo 
+
+using a none string value:
+>>> say_my_name(1, "Akello")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Using an Int:
+>>> say_my_name("Paulo", 5)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Using a list:
+>>> say_my_name(["Paulo", "Pau"], "Akello")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Using a dictionary:
+>>> say_my_name("Paulo", {1: "Akello", 2: "Ake"})
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Using none values:
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Using None:
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
