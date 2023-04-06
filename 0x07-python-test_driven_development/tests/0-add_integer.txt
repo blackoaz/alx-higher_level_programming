@@ -4,8 +4,8 @@ File for testing 0-add_integer.py
 This is a module for adding two numbers
 a and b can be a float or an integer
 b has a default value of 98 if no value is given
-
-importing the python file
+============================
+importing the python file:
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
@@ -22,7 +22,7 @@ Using default output of b:
 101
 
 Adding float values:
->>> add_integer(10.0 + 21.2)
+>>> add_integer(10.0, 21.2)
 31
 
 Adding float and integer value:
