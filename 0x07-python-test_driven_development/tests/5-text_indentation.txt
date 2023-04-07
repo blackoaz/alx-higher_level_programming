@@ -1,0 +1,72 @@
+=================================
+How to use 5-text_indentation.py
+=================================
+importation of the module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+basic usage:
+>>> text_indentation("Good Morning?")
+Good Morning?
+<BLANKLINE>
+
+>>> text_indentation("Good Morning? My People.")
+Good Morning?
+<BLANKLINE>
+My People.
+<BLANKLINE>
+
+>>> text_indentation("   Good Morning?")
+Good Morning?
+<BLANKLINE>
+
+>>> text_indentation("Good Morning?   ")
+Good Morning?
+<BLANKLINE>
+
+>>> text_indentation("         ")
+
+
+>>> text_indentation("    Good Morning?    My People.   ")
+Good Morning?
+<BLANKLINE>
+My People.
+<BLANKLINE>
+
+Working without the end parameters:
+>>> text_indentation("Good Morning, My People")
+Good Morning, My People
+
+New lines within a string are printed as normal.
+
+>>> text_indentation("Good Morning, My People:\nGreetings.")
+Good Morning, My People:
+<BLANKLINE>
+<BLANKLINE>
+Greetings.
+<BLANKLINE>
+
+>>> text_indentation("\n\n\n I just added three new lines.")
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+I just added three new lines.
+<BLANKLINE>
+
+
+>>> text_indentation("A sneaky \n new line.")
+A sneaky 
+new line.
+<BLANKLINE>
+
+Using a different data type:
+>>> text_indentation(7)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"one": 1, "two": 2})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
