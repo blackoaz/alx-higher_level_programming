@@ -37,7 +37,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_floats(self):
         """Testing for floats in a list."""
         floats = [1.53, 6.33, -8.56, 14.2, 6.0]
-        self.assertEqual(max_integer(floats), 15.2)
+        self.assertEqual(max_integer(floats), 14.2)
 
     def test_ints_and_floats(self):
         """Test a list of ints and floats."""
