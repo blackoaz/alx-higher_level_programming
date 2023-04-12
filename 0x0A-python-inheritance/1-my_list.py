@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """class module MyList that inherits from a list"""
 
