@@ -8,5 +8,4 @@ class MyList(list):
     def print_sorted(self):
         """function for printing sorted list"n ascending order"""
 
-        sorted_list = sorted(self)
-        print(sorted_list)
+        print(sorted(self))
