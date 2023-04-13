@@ -19,7 +19,7 @@ class Square(Rectangle):
         return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
-            """calculates area method for square, therefore
-            overwritting the area method for rectangle
-            """
-            return self.__size ** 2
+        """calculates area method for square, therefore
+        overwritting the area method for rectangle
+        """
+        return self.__size ** 2
