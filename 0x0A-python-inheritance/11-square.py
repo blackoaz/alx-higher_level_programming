@@ -15,12 +15,11 @@ class Square(Rectangle):
         self.__size = size
         super().__init__(size, size)
 
-        def __str__(self):
-            return super.__str__()
+    def __str__(self):
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
-        def area(self):
+    def area(self):
             """calculates area method for square, therefore
             overwritting the area method for rectangle
             """
-
             return self.__size ** 2
