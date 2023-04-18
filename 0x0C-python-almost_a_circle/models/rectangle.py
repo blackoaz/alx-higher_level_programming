@@ -11,10 +11,10 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
         @property
         def width(self):
@@ -63,3 +63,17 @@ class Rectangle(Base):
             """a setter for y"""
 
             self.__y = y
+
+        def type_validation(self, name:  str,
+                            value: object, not_zero_less=True) -> None:
+            """validation of the type and value
+            """
+            if not isinstance(value, int):
+                raise TypeError("{} must be an integer".format(name))
+            if not_zero_less:
+                if value <= 0:
+                    raise ValueError("{} must be > 0".format(name))
+
+            else:
+                if value < 0:
+                    raise ValueError("{} must be >= 0".format(name))
