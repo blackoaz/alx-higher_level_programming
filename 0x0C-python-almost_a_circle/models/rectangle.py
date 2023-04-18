@@ -101,3 +101,15 @@ class Rectangle(Base):
                                                                  self.__width,
                                                                  self.__height
                                                                  )
+
+    def update(self, *args):
+        """args and Kwargs"""
+
+        arg_val = (self.id, self.width, self.height, self.x, self.y)
+        if args != ():
+            self.id, self.width, self.height, self.x, self.y = \
+                    args + arg_val[len(args): len(arg_val)]
+
+        elif kwargs:
+            for (k, v) in kwargs.items():
+                setattr(self, k, v)
