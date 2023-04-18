@@ -89,8 +89,8 @@ class Rectangle(Base):
     def display(self):
         """function dispaying rectangle based on height and width"""
 
-        for i in range(self.__height):
-            for j in range(self.__width):
+        for i in range(self.y, self.y + self.__height):
+            for j in range(self.x, self.x + self.__width):
                 print("#", end="")
             print()
 
