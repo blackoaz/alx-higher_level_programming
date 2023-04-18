@@ -11,70 +11,70 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
-    def width(self):
+    def width(self) -> int:
         """getter for the width"""
 
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, width: int):
         """setter function for the width"""
 
         self.validate('width', width)
         self.__width = width
 
     @property
-    def height(self):
+    def height(self) -> int:
         """a getter class for the height"""
 
         return self.__height
 
     @height.setter
-    def height(self, height):
+    def height(self, height: int):
         """a setter for the height variable"""
 
         self.validate('height', height)
         self.__height = height
 
     @property
-    def x(self):
+    def x(self) -> int:
         """a getter method for x"""
 
         return self.__x
 
     @x.setter
-    def x(self, x):
+    def x(self, x: int):
         """a setter for x"""
 
-        self.validate('x', x, False)
+        self.validate('x', x, True)
         self.__x = x
 
     @property
-    def y(self):
+    def y(self) -> int:
         """a getter for y"""
 
         return self.__y
 
     @y.setter
-    def y(self, y):
+    def y(self, y: int):
         """a setter for y"""
 
-        self.validate('y', y, False)
+        self.validate('y', y, True)
         self.__y = y
 
-    def validate(self, name: str, value: int, not_zero=True) -> None:
+    def validate(self, name: str, value: object, not_zero=False):
         """Validates the input values
         """
 
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
-        if not_zero:
+        if not not_zero:
             if value <= 0:
                 raise ValueError("{} must be > 0".format(name))
         else:
