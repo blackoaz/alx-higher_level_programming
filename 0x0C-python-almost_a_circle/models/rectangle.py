@@ -102,7 +102,7 @@ class Rectangle(Base):
                                                                  self.__height
                                                                  )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """args and Kwargs"""
 
         arg_val = (self.id, self.width, self.height, self.x, self.y)
