@@ -16,64 +16,67 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-        @property
-        def width(self):
-            """getter for the width"""
+    @property
+    def width(self):
+        """getter for the width"""
 
-            return self.__width
+        return self.__width
 
-        @width.setter
-        def width(self, width):
-            """setter function for the width"""
+    @width.setter
+    def width(self, width):
+        """setter function for the width"""
 
-            self.__width = width
+        self.validate('width', width)
+        self.__width = width
 
-        @property
-        def height(self):
-            """a getter class for the height"""
+    @property
+    def height(self):
+        """a getter class for the height"""
 
-            return self.__height
+        return self.__height
 
-        @height.setter
-        def height(self, height):
-            """a setter for the height variable"""
+    @height.setter
+    def height(self, height):
+        """a setter for the height variable"""
 
-            self.__height = height
+        self.validate('height', height)
+        self.__height = height
 
-        @property
-        def x(self):
-            """a getter method for x"""
+    @property
+    def x(self):
+        """a getter method for x"""
 
-            return self.__x
+        return self.__x
 
-        @x.setter
-        def x(self, x):
-            """a setter for x"""
+    @x.setter
+    def x(self, x):
+        """a setter for x"""
 
-            self.__x = x
+        self.validate('x', x, False)
+        self.__x = x
 
-        @property
-        def y(self):
-            """a getter for y"""
+    @property
+    def y(self):
+        """a getter for y"""
 
-            return self.__y
+        return self.__y
 
-        @y.setter
-        def y(self, y):
-            """a setter for y"""
+    @y.setter
+    def y(self, y):
+        """a setter for y"""
 
-            self.__y = y
+        self.validate('y', y, False)
+        self.__y = y
 
-        def type_validation(self, name:  str,
-                            value: object, not_zero_less=True) -> None:
-            """validation of the type and value
-            """
-            if not isinstance(value, int):
-                raise TypeError("{} must be an integer".format(name))
-            if not_zero_less:
-                if value <= 0:
-                    raise ValueError("{} must be > 0".format(name))
+    def validate(self, name: str, value: int, not_zero=True) -> None:
+        """Validates the input values
+        """
 
-            else:
-                if value < 0:
-                    raise ValueError("{} must be >= 0".format(name))
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if not_zero:
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(name))
+        else:
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
