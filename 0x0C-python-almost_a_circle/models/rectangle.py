@@ -87,12 +87,11 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        """function dispaying rectangle based on height and width"""
-
-        for i in range(self.y, self.y + self.__height):
-            for j in range(self.x, self.x + self.__width):
-                print("#", end="")
-            print()
+        """method for displaying # shape of the rectangle
+        """
+        print('\n'*self.y, end='')
+        for list_len in range(self.height):
+            print(' '*self.x + '#'*self.width)
 
     def __str__(self) -> str:
         """"string method"""
