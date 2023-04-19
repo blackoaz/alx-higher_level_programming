@@ -46,3 +46,8 @@ class Square(Rectangle):
             for k, v in kwargs.items():
                 if k in args_list:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """dictionary method for Square"""
+
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
