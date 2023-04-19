@@ -37,3 +37,12 @@ class Base:
                 text.append(item.to_dictionary())
         with open(file_name, 'w') as f:
             return f.write(Base.to_json_string(text))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """method for decoding json to object"""
+
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
