@@ -18,10 +18,10 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_dictionaries: dict):
+    def to_json_string(list_dictionaries):
         """method for encoding"""
 
         if list_dictionaries is None:
             return "[]"
         else:
-            json.dumps(list_dictionaries)
+            return json.dumps(list_dictionaries)
