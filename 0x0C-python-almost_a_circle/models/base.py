@@ -57,3 +57,15 @@ class Base:
             inst = cls(10, 10)
         inst.update(**dictionary)
         return inst
+
+    @classmethod
+    def load_from_file(cls):
+        file_name = cls.__name__ + ".json"
+        item_list = []
+
+        with open(file_name, 'r') as f:
+            filelist = Base.from_json_string(f.read())
+            for file_i in filelist:
+                item_list.append(cls.create(**file_i))
+
+        return item_list
