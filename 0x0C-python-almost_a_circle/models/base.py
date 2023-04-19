@@ -37,4 +37,3 @@ class Base:
                 text.append(item.to_dictionary())
         with open(file_name, 'w') as f:
             return f.write(Base.to_json_string(text))
-
