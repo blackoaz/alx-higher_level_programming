@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
+-- Lists all the databases of your sql server
 SHOW DATABASES;
