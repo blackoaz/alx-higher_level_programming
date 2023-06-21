@@ -20,5 +20,15 @@ def get_cities(username, password, database):
     db.close()
 
 
-if __name__ = '__main__':
-    get_cities(sys.argv[1], sys.argv[2], sys.argv[3])
+if __name__ == '__main__':
+    # Check if all 3 arguments are provided
+    if len(sys.argv) != 4:
+        print("Usage: python script.py <username> <password> <database>")
+    else:
+        # Retrieve the command-line arguments
+        username = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
+
+        # Call the function to list cities
+        get_cities(username, password, database)
