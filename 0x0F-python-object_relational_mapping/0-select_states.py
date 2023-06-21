@@ -8,7 +8,8 @@ from sys import argv
 
 def get_states(username, password, database):
     """function for getting all the states"""
-    db = MySQLdb.cnnect(host="localhost", port="3306", password=str(password),
+    
+    db = MySQLdb.connect(host="localhost", port=3306, password=str(password),
                         user=str(username), database=str(database),
                         charset="utf8")
     cur = db.cursor()
