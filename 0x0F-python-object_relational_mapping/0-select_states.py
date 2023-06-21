@@ -1,22 +1,19 @@
 #!/usr/bin/python3
-"""Script for listing all states in a database in a ascending order"""
-
+"""Script for listing all the states in a databse"""
 
 import MySQLdb
 from sys import argv
 
 
-def get_states(username, password, database):
-    """function for getting all the states"""
-    
-    db = MySQLdb.connect(host="localhost", port=3306, password=str(password),
-                        user=str(username), database=str(database),
-                        charset="utf8")
+def get_states(username, password, dbname):
+    """lists all states from the database hbtn_0e_0_usa"""
+    db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
+                         passwd=str(password), db=str(dbname), charset="utf8")
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id")
-    states = curs.fetchall()
-    for state in states:
-        print(state)
+    cur.execute("SELECT * FROM states ORDER BY id;")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
 
