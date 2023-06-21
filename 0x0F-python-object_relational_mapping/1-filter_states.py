@@ -11,11 +11,9 @@ def get_states(username, password, database):
     db = MySQLdb.connect(host="localhost", port=3306, user=str(username),
                          password=str(password), database=str(database))
     cur = db.cursor()
-    states = cur.execute("SELECT * FROM states WHERE name LIKE '%N'
-                         ORDER BY id")
+    cur.execute("SELECT * FROM `states` ORDER BY id")
 
-    for state in states:
-        print(state)
+    [print(state) for state cur.fetchall() if state[1][0] = "N"]
 
     cur.close()
     db.close()
