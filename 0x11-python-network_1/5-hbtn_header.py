@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Displaying the X-Request-Id header variable of a request to a given url using requests
+"""Displaying the X-Request-Id header variable of a request to a given
+   url using requests
 """
 import sys
 import requests
