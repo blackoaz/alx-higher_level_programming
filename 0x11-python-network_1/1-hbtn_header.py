@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-# script for displaying header content
-
-
-import urllib.request
+"""A script that displays of the X-Request-Id variable found in the 
+   header of the response.
+"""
 import sys
-if __name__ == '__main__':
+import urllib.request
+
+if __name__ == "__main__":
     url = sys.argv[1]
-    urllib.request.Request(url)
-    with urllib.request.urlopen(url) as response:
-        data = response.read()
+
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
         print(dict(response.headers).get("X-Request-Id"))
