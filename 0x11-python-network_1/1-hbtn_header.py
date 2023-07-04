@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A script that displays of the X-Request-Id variable found in the 
+"""A script that displays of the X-Request-Id variable found in the
    header of the response.
 """
 import sys
